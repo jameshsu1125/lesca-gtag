@@ -1,13 +1,24 @@
 import React from 'react';
 import { render } from 'react-dom';
-import MyClass from './../lib/index';
+import Gtag from './../lib/index';
 
 import './styles.css';
+
+Gtag.install('UA-20404972-1');
+
+function pv() {
+	Gtag.pv('title');
+}
+
+function evt() {
+	Gtag.event('title', 'label');
+}
 
 function Demo() {
 	return (
 		<>
-			<MyClass />
+			<button onClick={pv}>send page view</button>
+			<button onClick={evt}>send event</button>
 		</>
 	);
 }

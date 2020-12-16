@@ -3,19 +3,29 @@
 # Installation
 
 ```sh
-$ npm install <package> --save
+$ npm install lesca-gtag --save
 ```
 
 # Usage
 
 ```javascript
-import foo from 'foo';
+import Gtag from 'lesca-gtag';
+
+Gtag.install('your-gtag-id');
+Gtag.pv('your page name');
+
+function gevt() {
+	Gtag.event('category', 'label');
+}
+
+<button onClick={gevt}>send event</button>;
 ```
 
 # Methods
 
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ | :-------------: | ------------: |
-| col 3 is      | some wordy text |        \$1600 |
-| col 2 is      |    centered     |          \$12 |
-| zebra stripes |    are neat     |           \$1 |
+| method             |  options  |       description        | default |
+| :----------------- | :-------: | :----------------------: | ------: |
+| install(id)        |    id     |         gtag id          |         |
+| pv(page_name)      | page_name |    page name ex: home    |         |
+| event(cate, label) |   cate    | category name. ex: home  |         |
+|                    |   label   | label name. ex: download |         |
