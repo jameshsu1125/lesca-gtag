@@ -32,13 +32,11 @@ const pv = function (title, gid) {
 	});
 };
 
-const event = function (title, description = '') {
+const event = function (title, category_name = '') {
 	if (!gtag) return;
-	gtag('event', 'click', {
-		event_category: title,
-		event_label: description,
-	});
+	gtag('event', `${title}-${category_name}`, { category: category_name });
 };
+
 module.exports = {
 	install,
 	pv,
