@@ -12,6 +12,8 @@ $ npm install lesca-gtag --save
 
 # Usage
 
+## install
+
 ```javascript
 import Gtag from 'lesca-gtag';
 
@@ -19,12 +21,16 @@ import Gtag from 'lesca-gtag';
 Gtag.install('your-gtag-id');
 ```
 
+## add pageview
+
 ```javascript
 import Gtag from 'lesca-gtag';
 
 // page view
 Gtag.pv('your page name');
 ```
+
+## add event
 
 ```javascript
 import Gtag from 'lesca-gtag';
