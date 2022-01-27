@@ -1,6 +1,8 @@
+const property = { id: false };
+
 const install = (gid) => {
 	const scriptId = 'ga-gtag';
-	window.gtagID = window.gtagID || gid;
+	property.id = gid;
 
 	if (document.getElementById(scriptId)) return;
 
@@ -22,23 +24,25 @@ const gtag = function () {
 	window.dataLayer.push(arguments);
 };
 
-const pv = function (title, gid) {
-	let id = window.gtagID || gid;
-	if (!id) return;
-	if (!gtag) return;
+const pv = function (title) {
+	const { id } = property;
+	if (!id) {
+		console.log('[lesca-gtag]', 'gid not found.');
+	}
+
 	gtag('config', id, {
 		page_title: title,
 		page_path: '/' + title,
 	});
 };
 
-const event = function (title, category_name = '') {
-	if (!gtag) return;
-	gtag('event', `${title}-${category_name}`, { category: category_name });
+const event = function (title, category = '') {
+	const { id } = property;
+	if (!id) {
+		console.log('[lesca-gtag]', 'gid not found.');
+	}
+	gtag('event', `${title}-${category}`, { category });
 };
 
-module.exports = {
-	install,
-	pv,
-	event,
-};
+const Gtag = { install, pv, event };
+export default Gtag;
