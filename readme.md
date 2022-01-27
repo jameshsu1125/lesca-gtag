@@ -6,19 +6,36 @@
 $ npm install lesca-gtag --save
 ```
 
+# Demo
+
+[Live Demo](https://jameshsu1125.github.io/lesca-gtag/)
+
 # Usage
 
 ```javascript
 import Gtag from 'lesca-gtag';
 
+// install on entry file
 Gtag.install('your-gtag-id');
+```
+
+```javascript
+import Gtag from 'lesca-gtag';
+
+// page view
 Gtag.pv('your page name');
+```
 
-function gevt() {
-	Gtag.event('category', 'label');
-}
+```javascript
+import Gtag from 'lesca-gtag';
 
-<button onClick={gevt}>send event</button>;
+<button
+	onClick={() => {
+		Gtag.event('pageName', 'CategoryName');
+	}}
+>
+	send event
+</button>;
 ```
 
 # Methods
