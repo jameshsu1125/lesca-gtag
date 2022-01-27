@@ -46,9 +46,9 @@ import Gtag from 'lesca-gtag';
 
 # Methods
 
-| method             |  options  |       description        | default |
-| :----------------- | :-------: | :----------------------: | ------: |
-| install(id)        |    id     |         gtag id          |         |
-| pv(page_name)      | page_name |    page name ex: home    |         |
-| event(cate, label) |   cate    | category name. ex: home  |         |
-|                    |   label   | label name. ex: download |         |
+| method                        |   options    |         description         | default |
+| :---------------------------- | :----------: | :-------------------------: | ------: |
+| install(id)                   |      id      |           gtag id           |         |
+| pv(page_name)                 |  page_name   |     page name ex: home      |         |
+| event(pageName, categoryName) |   pageName   |     page name. ex: home     |         |
+|                               | categoryName | category name. ex: download |         |
