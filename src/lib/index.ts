@@ -1,6 +1,12 @@
-const property = { id: false };
+const property = { id: '' };
 
-const install = (gid) => {
+declare global {
+  interface Window {
+    dataLayer: Record<string, any>[];
+  }
+}
+
+const install = (gid: string) => {
   const scriptId = 'ga-gtag';
   property.id = gid;
 
@@ -20,11 +26,15 @@ const install = (gid) => {
   gtag('config', gid);
 };
 
-const gtag = function () {
-  window.dataLayer.push(arguments);
+const insert = (gid: string) => {
+  property.id = gid;
 };
 
-const pv = function (title) {
+const gtag = function (...args: any[]) {
+  window.dataLayer.push(args);
+};
+
+const pv = function (title: string) {
   const { id } = property;
   if (!id) {
     console.log('[lesca-gtag]', 'gid not found.');
@@ -36,13 +46,11 @@ const pv = function (title) {
   });
 };
 
-const event = function (title, category = '') {
+const event = function (title: string, category: string = '') {
   const { id } = property;
-  if (!id) {
-    console.log('[lesca-gtag]', 'gid not found.');
-  }
+  if (!id) console.error('[lesca-gtag]', 'gid not found.');
   gtag('event', `${title}-${category}`, { category });
 };
 
-const Gtag = { install, pv, event };
+const Gtag = { install, pv, event, insert };
 export default Gtag;
