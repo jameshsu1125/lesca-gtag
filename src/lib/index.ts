@@ -31,7 +31,7 @@ const insert = (gid: string) => {
 };
 
 const gtag = function (...args: any[]) {
-  window.dataLayer.push(args);
+  window.dataLayer.push(arguments);
 };
 
 const pv = function (title: string) {
