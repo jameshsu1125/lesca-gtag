@@ -46,10 +46,10 @@ const pv = function (title: string) {
   });
 };
 
-const event = function (title: string, category: string = '') {
+const event = function (title: string, category: string = '', label = '') {
   const { id } = property;
   if (!id) console.error('[lesca-gtag]', 'gid not found.');
-  gtag('event', `${title}-${category}`, { category });
+  gtag('event', `${title}-${category}`, { event_category: category, event_label: label });
 };
 
 const Gtag = { install, pv, event, insert };

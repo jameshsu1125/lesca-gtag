@@ -6,7 +6,7 @@ declare global {
 declare const Gtag: {
     install: (gid: string) => void;
     pv: (title: string) => void;
-    event: (title: string, category?: string) => void;
+    event: (title: string, category?: string, label?: string) => void;
     insert: (gid: string) => void;
 };
 export default Gtag;
