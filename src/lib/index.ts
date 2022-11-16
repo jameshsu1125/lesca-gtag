@@ -25,7 +25,7 @@ const install = (gid: string, debug = false) => {
 
   gtag('js', new Date());
   gtag('config', gid);
-  if (debug) console.warn(`gid = ${gid}`);
+  if (debug) console.log(`%c gid = ${gid}`, 'color: #bada55');
 };
 
 const insert = (gid: string) => {
@@ -39,7 +39,7 @@ const gtag = function (...args: any[]) {
 const pv = function (title: string) {
   const { id, debug } = property;
   if (!id) {
-    console.log('[lesca-gtag]', 'gid not found.');
+    console.warn('[lesca-gtag]', 'gid not found.');
   }
 
   gtag('config', id, {
@@ -48,7 +48,7 @@ const pv = function (title: string) {
   });
 
   if (debug) {
-    console.warn(`pv = ${title}`);
+    console.log(`%c pv = ${title}`, 'color: #bada55');
   }
 };
 
@@ -56,7 +56,7 @@ const event = function (title: string, category: string = '', label = '') {
   const { id, debug } = property;
   if (!id) console.error('[lesca-gtag]', 'gid not found.');
   gtag('event', `${title}-${category}`, { event_category: category, event_label: label });
-  if (debug) console.warn(`event = ${title}-${category}`);
+  if (debug) console.log(`%c event = ${title}-${category}`, 'color: #bada55');
 };
 
 const Gtag = { install, pv, event, insert };
