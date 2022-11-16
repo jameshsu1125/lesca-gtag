@@ -2,7 +2,7 @@ import { Button, ButtonGroup, Link } from '@mui/material';
 import { useEffect } from 'react';
 import Gtag from '../../lib';
 
-Gtag.install('UA-20404972-1');
+Gtag.install('UA-20404972-1', true);
 
 const Demo = () => {
   useEffect(() => {
