@@ -55,9 +55,12 @@ const pv = function (title: string) {
 const event = function (title: string, category: string = '', label = '') {
   const { id, debug } = property;
   if (!id) console.error('[lesca-gtag]', 'gid not found.');
-  gtag('event', `${title}-${category}`, { event_category: category, event_label: label });
+  gtag('event', `${title}-${category}`, {
+    category: category,
+    label: label,
+  });
   if (debug) console.log(`%c event = ${title}-${category}`, 'color: #bada55');
 };
 
-const Gtag = { install, pv, event, insert };
+const Gtag = { install, pv, event, insert, gtag };
 export default Gtag;

@@ -63,6 +63,7 @@ import Gtag from 'lesca-gtag';
 | .inset(**id**:_string_)                                | push dataLayer without gtag.js(use gtm maybe) |   void |
 | .pv( **pageName**:_string_ )                           |                 add page view                 |   void |
 | .event(**pageName**:_string_, **actionName**:_string_) |                   add event                   |   void |
+| .gtag( **arguments**:_string_ )                        |                   arguments                   |   void |
 
 ### Features
 

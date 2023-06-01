@@ -8,5 +8,6 @@ declare const Gtag: {
     pv: (title: string) => void;
     event: (title: string, category?: string, label?: string) => void;
     insert: (gid: string) => void;
+    gtag: (...args: any[]) => void;
 };
 export default Gtag;
