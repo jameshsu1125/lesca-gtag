@@ -42,9 +42,9 @@ const pv = function (title: string) {
     console.warn('[lesca-gtag]', 'gid not found.');
   }
 
-  gtag('config', id, {
-    page_title: title,
+  gtag('event', 'page_view', {
     page_path: '/' + title,
+    page_title: title,
   });
 
   if (debug) {
@@ -55,10 +55,13 @@ const pv = function (title: string) {
 const event = function (title: string, category: string = '', label = '') {
   const { id, debug } = property;
   if (!id) console.error('[lesca-gtag]', 'gid not found.');
+
   gtag('event', `${title}-${category}`, {
-    category: category,
-    label: label,
+    event_category: category,
+    event_label: label,
+    event_value: label,
   });
+
   if (debug) console.log(`%c event = ${title}-${category}`, 'color: #bada55');
 };
 
