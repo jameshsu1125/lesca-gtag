@@ -1,11 +1,12 @@
 {
-  "name": "template-npm-vite",
+  "name": "lesca-gtag",
   "private": false,
-  "description": "xxxxx",
-  "version": "0.0.0",
+  "description": "google analytics sample tracking",
+  "version": "3.0.0",
   "type": "module",
   "keywords": [
-    "lesca"
+    "lesca",
+    "google analytics"
   ],
   "files": [
     "lib"
