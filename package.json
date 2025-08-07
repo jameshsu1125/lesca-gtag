@@ -1,61 +1,42 @@
 {
-  "name": "lesca-gtag",
-  "version": "2.0.0",
-  "description": "google analytics sample tracking",
-  "main": "lib/index.js",
-  "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "watch": "babel --watch src/lib --out-dir lib --extensions '.ts,.tsx'",
-    "build": "NODE_ENV=production webpack",
-    "deploy": "gh-pages -d dist",
-    "tsc": "npx tsc --watch",
-    "dev": "concurrently \"npm run watch\" \"npm run tsc\" \"npm run start\"",
-    "rm": "rm -rf node_modules/ package-lock.json",
-    "op": "babel src/lib -d lib --copy-files"
-  },
+  "name": "template-npm-vite",
+  "private": false,
+  "description": "xxxxx",
+  "version": "0.0.0",
+  "type": "module",
   "keywords": [
-    "lesca",
-    "google analytics"
+    "lesca"
   ],
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.27.2",
-    "@babel/core": "^7.27.3",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
-    "@babel/plugin-transform-runtime": "^7.27.3",
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-react": "^7.27.1",
-    "@babel/preset-typescript": "^7.27.1",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^7.1.0",
-    "@mui/material": "^7.1.0",
-    "autoprefixer": "^10.4.21",
-    "babel-loader": "^10.0.0",
-    "concurrently": "^9.1.2",
-    "css-loader": "^7.1.2",
-    "file-loader": "^6.2.0",
-    "gh-pages": "^6.3.0",
-    "html-react-parser": "^5.2.5",
-    "html-webpack-plugin": "^5.6.3",
-    "less": "^4.3.0",
-    "less-loader": "^12.3.0",
-    "less-vars-to-js": "^1.3.0",
-    "postcss": "^8.5.4",
-    "postcss-loader": "^8.1.1",
-    "prismjs": "^1.30.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "style-loader": "^4.0.0",
-    "ts-loader": "^9.5.2",
-    "typescript": "^5.8.3",
-    "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.1"
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js"
+    }
   },
-  "author": "jamehsu1125 <jameshsu1125@gmail.com>",
-  "dependencies": {
-    "@babel/runtime": "^7.27.3"
+  "scripts": {
+    "dev": "NODE_ENV=DEV vite --host",
+    "build": "NODE_ENV=production tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "rm": "rm -rf node_modules/ dist/ package-lock.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^24.2.0",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0",
+    "path": "^0.12.7",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.0",
+    "vite": "^7.0.6",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
