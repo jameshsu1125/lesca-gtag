@@ -2,7 +2,7 @@
   "name": "lesca-gtag",
   "private": false,
   "description": "google analytics sample tracking",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "module",
   "keywords": [
     "lesca",
